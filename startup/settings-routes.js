@@ -8,6 +8,7 @@ const pageAccesses = require("../routers/settings/accesses/page-accesses");
 //------
 const members = require("../routers/settings/users-info/members");
 const doctors = require("../routers/settings/users-info/doctors");
+const sectionExperts = require("../routers/settings/users-info/section-experts");
 //------
 
 module.exports = function (app) {
@@ -21,5 +22,6 @@ module.exports = function (app) {
   //------
   app.use("/api/settings/users-info/members", members);
   app.use("/api/settings/users-info/doctors", doctors);
+  app.use("/api/settings/users-info/section-experts", sectionExperts);
   //------
 };
