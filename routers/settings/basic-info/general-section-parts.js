@@ -8,7 +8,7 @@ const path = require("path");
 router.get("/", auth, async (req, res) => {
   const { MemberID } = req.user;
 
-  let result = await selectQuery(`EXEC StatisticAPI.GetAllGenralSectionParts ${MemberID}`);
+  let result = await selectQuery(`EXEC StatisticAPI.GetAllGeneralSectionParts ${MemberID}`);
 
   result = result.recordset;
 
@@ -21,7 +21,7 @@ router.get("/", auth, async (req, res) => {
 router.get("/params", auth, async (req, res) => {
   const { MemberID } = req.user;
 
-  let result = await selectQuery(`EXEC StatisticAPI.GetGenralSectionPartsParams ${MemberID}`);
+  let result = await selectQuery(`EXEC StatisticAPI.GetGeneralSectionPartsParams ${MemberID}`);
 
   result = result.recordset[0];
 
@@ -39,7 +39,7 @@ router.post("/search", auth, async (req, res) => {
   const { MemberID } = req.user;
 
   let result = await selectQuery(
-    `EXEC StatisticAPI.SearchGenralSectionParts ${MemberID}, N'${searchText}'`
+    `EXEC StatisticAPI.SearchGeneralSectionParts ${MemberID}, N'${searchText}'`
   );
 
   result = result.recordset;
@@ -54,7 +54,7 @@ router.post("/", auth, async (req, res) => {
   const { MemberID } = req.user;
 
   let result = await selectQuery(
-    `EXEC StatisticAPI.SaveGenralSectionPart ${MemberID}, N'${JSON.stringify(req.body)}'`
+    `EXEC StatisticAPI.SaveGeneralSectionPart ${MemberID}, N'${JSON.stringify(req.body)}'`
   );
 
   result = result.recordset[0];
@@ -68,7 +68,7 @@ router.delete("/:recordID", auth, async (req, res) => {
   const { MemberID } = req.user;
 
   let result = await selectQuery(
-    `EXEC StatisticAPI.DeleteGenralSectionPart ${MemberID}, ${req.params.recordID}`
+    `EXEC StatisticAPI.DeleteGeneralSectionPart ${MemberID}, ${req.params.recordID}`
   );
 
   result = result.recordset[0];
