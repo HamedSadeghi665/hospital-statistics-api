@@ -13,6 +13,7 @@ const doctors = require("../routers/settings/users-info/doctors");
 const sectionExperts = require("../routers/settings/users-info/section-experts");
 //------
 const dailyForms = require("../routers/settings/main-info/daily-forms");
+const birthForms = require("../routers/settings/main-info/birth-forms");
 //------
 
 module.exports = function (app) {
@@ -29,6 +30,7 @@ module.exports = function (app) {
   app.use("/api/settings/basic-info/general-section-parts", generalSectionParts);
   //------
   app.use("/api/settings/main-info/daily-forms", dailyForms);
+  app.use("/api/settings/main-info/birth-forms", birthForms);
   //------
   app.use("/api/settings/accesses/page-accesses", pageAccesses);
 };
